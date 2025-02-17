@@ -1112,7 +1112,7 @@ boolean LX_lastChance()
 	{
 		location banishLoc;
 		auto_log_warning("Patriotic Eagle's screech banished something we need and we can't adventure anywhere else");
-		while(get_property("screechCombats").to_int() > 0 && my_adventures() > 2 && phylumBanishTurnsRemaining() > 0)
+		while((get_property("screechCombats").to_int() > 0 || banishLoc == $location[none]) && my_adventures() > 2 && phylumBanishTurnsRemaining() > 0)
 		{
 			handleFamiliar($familiar[Patriotic Eagle]); //force eagle to be used
 			if(LX_getDigitalKey() || LX_getStarKey())

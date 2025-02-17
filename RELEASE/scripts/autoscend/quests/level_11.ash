@@ -915,7 +915,7 @@ boolean L11_forgedDocuments()
 	{
 		return false;
 	}
-	if (my_meat() < npc_price($item[Forged Identification Documents]))
+	if (!in_wotsf() && my_meat() < npc_price($item[Forged Identification Documents]))
 	{
 		if(isAboutToPowerlevel())
 		{
